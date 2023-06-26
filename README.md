@@ -8,6 +8,8 @@
     - `lazy.nvim` supported
 - API to apply more colorschemes randomly
 
+[![asciicast](https://asciinema.org/a/593208.svg)](https://asciinema.org/a/593208)
+
 ## ⚡️ Requirements
 
 - Modern Neovim
