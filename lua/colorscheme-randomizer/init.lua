@@ -14,6 +14,20 @@ local function exists(file)
 	return ok, err
 end
 
+local function remove_b(a, b)
+	local A = {}
+	for _, v in pairs(a) do
+		A[v] = true
+	end
+
+	for _, v in pairs(b) do
+		if A[v] ~= nil then
+			A[v] = nil
+		end
+	end
+	return vim.tbl_keys(A)
+end
+
 --- Check if a directory exists in this path
 local function isdir(path)
 	-- "/" works on both Unix and Windows
@@ -83,7 +97,8 @@ function M.setup(config)
 
 	local detected_plugins = detect_plugin_dirs()
 
-	M.result.colorschemes = current.colorschemes or retrieve_colors(detected_plugins)
+	M.result.colorschemes =
+		remove_b(current.colorschemes or retrieve_colors(detected_plugins), settings.current.exclude_colorschemes or {})
 
 	M.randomize()
 end
