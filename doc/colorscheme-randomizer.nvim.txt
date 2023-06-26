@@ -53,6 +53,7 @@ INSTALLATION*colorscheme-randomizer.nvim-colorscheme-randomizer.nvim-installatio
         plugin_strategy = nil,
         plugins = nil,
         colorschemes = nil,
+        exclude_colorschemes = nil,
     })
 <
 
@@ -60,24 +61,28 @@ INSTALLATION*colorscheme-randomizer.nvim-colorscheme-randomizer.nvim-installatio
 ==============================================================================
 2. Configuration                   *colorscheme-randomizer.nvim-configuration*
 
-  --------------------------------------------------------------------------------
-  Property          Type             Description
-  ----------------- ---------------- ---------------------------------------------
-  apply_scheme      boolean?         Apply the colorscheme after being picked.
+  -------------------------------------------------------------------------------------
+  Property               Type             Description
+  ---------------------- ---------------- ---------------------------------------------
+  apply_scheme           boolean?         Apply the colorscheme after being picked.
 
-  plugin_strategy   string?          lazy is the only supported option. Strategy
-                                     used to resolve plugin names to colorscheme
-                                     names
+  colorschemes           table?           list of colorschemes to randomly select from.
+                                          When specified, this list is the only source
+                                          of truth to choose from.
 
-  plugins           table?           list of colorscheme plugins to look through
-                                     to resolve colorschemes. When unspecified,
-                                     all colorschemes are attempted to be resolved
-                                     via plugin_strategy
+  exclude_colorschemes   table?           list of colorschemes to remove from
+                                          colorschemes. useful when wanting to use
+                                          plugin_strategy and ignore some colorschemes.
 
-  colorschemes      table?           list of colorschemes to randomly select from.
-                                     When specified, this list is the only source
-                                     of truth to choose from.
-  --------------------------------------------------------------------------------
+  plugin_strategy        string?          lazy is the only supported option. Strategy
+                                          used to resolve plugin names to colorscheme
+                                          names
+
+  plugins                table?           list of colorscheme plugins to look through
+                                          to resolve colorschemes. When unspecified,
+                                          all colorschemes are attempted to be resolved
+                                          via plugin_strategy
+  -------------------------------------------------------------------------------------
 
 API                            *colorscheme-randomizer.nvim-configuration-api*
 
