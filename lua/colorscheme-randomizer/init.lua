@@ -57,6 +57,8 @@ function M.randomize()
 	if current.apply_scheme then
 		vim.cmd.colorscheme(M.result.curr_colorscheme)
 	end
+
+	return M.result.curr_colorscheme
 end
 
 ---@param config ColorSchemeRandomizerSettings | nil
