@@ -55,6 +55,9 @@ function M.randomize()
 	M.result.curr_colorscheme = M.result.colorschemes[math.random(#M.result.colorschemes)]
 
 	if current.apply_scheme then
+		vim.notify(('vim.cmd.colorscheme(%s)'):format(M.result.curr_colorscheme), vim.log.levels.INFO, {
+			title = 'colorscheme-randomizer',
+		})
 		vim.cmd.colorscheme(M.result.curr_colorscheme)
 	end
 
@@ -69,6 +72,8 @@ function M.setup(config)
 	math.random()
 	math.random()
 	math.random()
+
+	require('colorscheme-randomizer.api.command')
 
 	local settings = require('colorscheme-randomizer.settings')
 	if config then
