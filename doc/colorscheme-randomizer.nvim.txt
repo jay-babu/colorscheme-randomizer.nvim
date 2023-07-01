@@ -1,4 +1,4 @@
-*colorscheme-randomizer.nvim.txt* For Neovim >= 0.8.0Last change: 2023 June 26
+*colorscheme-randomizer.nvim.txt* For Neovim >= 0.8.0Last change: 2023 July 01
 
 ==============================================================================
 Table of Contents              *colorscheme-randomizer.nvim-table-of-contents*
