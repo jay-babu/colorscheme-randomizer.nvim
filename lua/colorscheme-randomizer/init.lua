@@ -1,3 +1,5 @@
+local utils = require('colorscheme-randomizer.utils')
+
 local M = {}
 
 M.result = {}
@@ -94,11 +96,18 @@ function M.setup(config)
 		settings.set(config)
 	end
 	local current = require('colorscheme-randomizer.settings').current
+	utils.create_path()
 
-	local detected_plugins = detect_plugin_dirs()
+	M.result.colorschemes = utils.load_bps(utils.get_bps_path())
 
-	M.result.colorschemes =
-		remove_b(current.colorschemes or retrieve_colors(detected_plugins), settings.current.exclude_colorschemes or {})
+	if not M.result.colorschemes then
+		local detected_plugins = detect_plugin_dirs()
+		M.result.colorschemes = remove_b(
+			current.colorschemes or retrieve_colors(detected_plugins),
+			settings.current.exclude_colorschemes or {}
+		)
+		utils.write_bps(utils.get_bps_path(), M.result.colorschemes)
+	end
 
 	M.randomize()
 end
