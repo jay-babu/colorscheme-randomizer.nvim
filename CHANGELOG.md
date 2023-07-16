@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/jay-babu/colorscheme-randomizer.nvim/compare/v1.0.0...v1.1.0) (2023-07-16)
+
+
+### Features
+
+* add caching support ([affd7ce](https://github.com/jay-babu/colorscheme-randomizer.nvim/commit/affd7ce180d4ff2bd3d96176fc2b2aa21a8dc535))
+
 ## 1.0.0 (2023-06-26)
 
 
